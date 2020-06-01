@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/danhSachMatHang">
+    <fragment
+        android:id="@+id/productFragment2"
+        android:name="vn.edu.ntu.thanhdat.navigationapp59cntt3.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_productFragment2_to_danhSachMatHang"
+            app:destination="@id/danhSachMatHang" />
+    </fragment>
+    <fragment
+        android:id="@+id/danhSachMatHang"
+        android:name="vn.edu.ntu.thanhdat.navigationapp59cntt3.DanhSachMatHang"
+        android:label="fragment_DSMatHang"
+        tools:layout="@layout/fragment_dsmathang" >
+        <action
+            android:id="@+id/action_danhSachMatHang_to_fragment_ShoppingCart"
+            app:destination="@id/fragment_ShoppingCart" />
+        <action
+            android:id="@+id/action_danhSachMatHang_to_productFragment2"
+            app:destination="@id/productFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_ShoppingCart"
+        android:name="vn.edu.ntu.thanhdat.navigationapp59cntt3.Fragment_ShoppingCart"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_fragment_ShoppingCart_to_xacNhanFragment3"
+            app:popUpTo="@id/fragment_ShoppingCart"
+            app:popUpToInclusive="true"
+            app:destination="@id/xacNhanFragment3" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/xacNhanFragment3"
+        android:name="vn.edu.ntu.thanhdat.navigationapp59cntt3.XacNhanFragment"
+        android:label="fragment_xac_nhan"
+        tools:layout="@layout/fragment_xac_nhan" >
+        <action
+            android:id="@+id/action_xacNhanFragment3_to_danhSachMatHang"
+            app:destination="@id/danhSachMatHang" />
+    </fragment>
+</navigation>
